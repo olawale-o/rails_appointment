@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   scope :v1, defaults: { format: :json } do
-    devise_for :users
+    devise_for :users, path_names: {
+      sign_in: 'login',
+      sign_up: 'create_account',
+      sign_out: 'logout'
+    }
   end
   namespace :v1, defaults: { format: :json } do
     resources :doctors
