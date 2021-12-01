@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
