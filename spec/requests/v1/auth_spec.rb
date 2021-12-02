@@ -72,7 +72,7 @@ RSpec.describe 'Authentication API' do
       security [Bearer: []]
       consumes 'application/json'
 
-      response '204', 'idempotent' do
+      response '204', 'logout successfully' do
         let(:Authorization) { @auth_headers['Authorization'] }
         run_test!
       end
