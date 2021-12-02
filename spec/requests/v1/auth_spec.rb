@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'Authentication API' do
+RSpec.describe 'Authentication API', type: :request do
   path '/v1/users' do
     post 'Create account' do
       tags 'Authentication'
@@ -73,7 +73,7 @@ RSpec.describe 'Authentication API' do
       consumes 'application/json'
 
       response '204', 'logout successfully' do
-        let(:Authorization) { @auth_headers['Authorization'] }
+        let(:Authorization) { @token }
         run_test!
       end
     end

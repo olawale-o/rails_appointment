@@ -29,7 +29,13 @@ RSpec.configure do |config|
             }
           }
         }
-      ]
+      ],
+      components: {
+        securitySchemes: {
+          Bearer: { type: 'apiKey', name: 'Authorization', in: 'header',
+                    description: 'JWT key necessary for protected API calls' }
+        }
+      }
     }
   }
 

@@ -11,8 +11,8 @@ require 'devise/jwt/test_helpers'
 require_relative 'support/factory_bot'
 require_relative 'support/database_cleaner'
 require_relative 'support/should_matchers'
-require_relative 'support/helper/api_spec_helper'
 require_relative 'support/storage_cleaner'
+require_relative 'support/helper/api_spec_helper'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -67,7 +67,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Devise::Test::IntegrationHelpers, type: :request
   config.extend Helper::ApiSpec, type: :controller
   config.extend Helper::ApiSpec, type: :request
 end
