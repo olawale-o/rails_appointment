@@ -28,7 +28,7 @@ RSpec.describe 'doctors', type: :request do
         let(:Authorization) { @token }
         let(:file) { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'images', 'bruno.jpg')) }
         let(:doctor) do
-          { fullname: 'Dr. Juan', city: 'Cochabamba', specialty: 'Pediatria', picture: file}
+          { fullname: 'Dr. Juan', city: 'Cochabamba', specialty: 'Pediatria', picture: file }
         end
         run_test!
       end
