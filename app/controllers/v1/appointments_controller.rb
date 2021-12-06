@@ -3,17 +3,17 @@ class V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show destroy]
 
   def index
-    @appointments = Appointment.all
-
-    render json: @appointments
+    @appointments = current_user.appointments.order(created_at: :desc)
   end
+
+  def show; end
 
   def create
     @appointment = Appointment.new(appointment_params)
 
     current_user.appointments << @appointment
     if @appointment.save
-      render json: @appointment, status: :created
+      render :show, status: :created
     else
       render json: @appointment.errors, status: :unprocessable_entity
     end
