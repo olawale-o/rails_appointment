@@ -2,7 +2,18 @@ require 'swagger_helper'
 
 RSpec.describe 'appointments', type: :request do
   login_user
+  # rubocop:disable Metrics/BlockLength
   path '/v1/appointments' do
+    get 'List all appointments' do
+      tags 'Appointments'
+      produces 'application/json'
+      security [Bearer: []]
+      produces 'application/json'
+      response '200', 'Successful' do
+        let(:Authorization) { @token }
+        run_test!
+      end
+    end
     post 'Creates a new appointment' do
       tags 'Appointments'
       security [Bearer: []]
@@ -15,6 +26,17 @@ RSpec.describe 'appointments', type: :request do
 
       response '201', 'appointment created' do
         let(:Authorization) { @token }
+        schema type: :object,
+               properties: {
+                 data: {
+                   type: :object,
+                   properties: {
+                     id: { type: :integer }, note: { type: :string }, appointment_date: { type: :string },
+                     name: { type: :string }, fullname: { type: :string }
+                   }
+                 }
+               },
+               required: %w[data]
         let(:appointment) do
           doc = create(:doctor)
           { note: 'test', book_for: '2020-01-01T00:00:00', doctor_id: doc.id }
@@ -32,6 +54,7 @@ RSpec.describe 'appointments', type: :request do
         run_test!
       end
     end
+    # rubocop:enable Metrics/BlockLength
   end
   path '/v1/appointments/{id}' do
     delete 'Deletes an appointment' do
