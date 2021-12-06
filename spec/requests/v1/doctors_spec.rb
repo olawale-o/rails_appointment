@@ -34,6 +34,7 @@ RSpec.describe 'doctors', type: :request do
       end
     end
   end
+  # rubocop:disable Metrics/BlockLength
   path '/v1/doctors/{id}' do
     get 'Retrieve a doctor' do
       tags 'Doctors'
@@ -44,9 +45,13 @@ RSpec.describe 'doctors', type: :request do
         let(:Authorization) { @token }
         schema type: :object,
                properties: {
-                 id: { type: :integer }
+                 data: { type: :object, properties: {
+                   doctor: { type: :object,
+                             properties: { id: { type: :integer }, fullname: { type: :string }, city: { type: :string },
+                                           specialty: { type: :string }, picture: { type: :file } } }
+                 } }
                },
-               required: %w[id]
+               required: %w[data]
         let(:id) { create(:doctor, user: @user).id }
         run_test!
       end
@@ -65,4 +70,5 @@ RSpec.describe 'doctors', type: :request do
       end
     end
   end
+  # rubocop:enable Metrics/BlockLength
 end
