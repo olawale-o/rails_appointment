@@ -4,20 +4,16 @@ class V1::DoctorsController < ApplicationController
 
   def index
     @doctors = Doctor.all
-
-    render json: @doctors
   end
 
-  def show
-    render json: @doctor
-  end
+  def show; end
 
   # POST /doctors
   def create
     @doctor = Doctor.new(doctor_params)
     current_user.doctors << @doctor
     if @doctor.save
-      render json: @doctor, status: :created
+      render :show, status: :created
     else
       render json: @doctor.errors, status: :unprocessable_entity
     end
