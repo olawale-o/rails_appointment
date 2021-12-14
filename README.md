@@ -1,24 +1,75 @@
-# README
+# Doctor Appointmemnt - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A RESTful Rails API backend to book an appointment with a doctor.
 
-Things you may want to cover:
+### ERD
+![screenshot](https://github.com/olawale-o/rails_appointment/blob/setup/erd.png?raw=true")
 
-* Ruby version
+## Built with
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+- PostgresSQL
 
-* Configuration
+## Getting started
 
-* Database creation
+#### Prerequisites
 
-* Database initialization
+- Ruby
+- Rspec
+- Rails
+- PostgreSQL
 
-* How to run the test suite
+#### To get a local copy of this repository kindly follow the steps below.
 
-* Services (job queues, cache servers, search engines, etc.)
+- Kindly make sure you have **ruby**, **Ruby on rails** and **PostgreSQL** installed
+- Scroll to top of this current repository
+- Click on the `Code` button with background color green on the right end corner
+- Click on the clipboard icon on the extreme right of the dropdown to copy the repository link
+- In your local PC, open your terminal or command prompt in the folder you would like to clone this repository into
+- Type `git clone (copied link)` on the currently opened terminal or command prompt
+- Remember to change `(copied link)` to `git@github.com:olawale-o/rails_appointment.git` which is the name of the repository
 
-* Deployment instructions
+### New Database Setup
+```
+  rails db:create
+  rails db:migrate
+```
 
-* ...
+### Troubleshoot database
+```
+  rails db:drop
+  rails db:create
+  rails db:migrate
+
+  or
+
+  rails db:setup
+```
+### Test
+```
+  rspec
+```
+
+## Author
+
+👤 **Omoogun Olawale**
+
+* Github: [@githubhandle](https://github.com/olawale-o)
+* Twitter: [@twitterhandle](https://twitter.com/ibreaktherules)
+* LinkedIn: [LinkedIn](https://www.linkedin.com/in/olawaleomoogun/)
+
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page.](https://github.com/olawale-o/rails_appointment/issues)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgements
+
+- Microverse
+- Original design by [Murat Korkmaz](https://www.behance.net/muratk) on Behance
