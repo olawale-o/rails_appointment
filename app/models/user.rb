@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
 
-  has_many :doctors
-  has_many :appointments
+  has_many :doctors, dependent: :destroy
+  has_many :appointments, dependent: :destroy
 end

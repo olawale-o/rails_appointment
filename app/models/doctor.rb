@@ -3,6 +3,6 @@ class Doctor < ApplicationRecord
   validates :fullname, uniqueness: { scope: :user_id }
 
   belongs_to :user
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_one_attached :picture
 end
