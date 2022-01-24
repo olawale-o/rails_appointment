@@ -46,9 +46,6 @@ group :development do
   gem 'spring'
   # Use to detect n+1 problems
   gem 'bullet'
-
-  # Use whenever gem to run cron jobs
-  gem 'whenever', require: false
 end
 
 group :test do
