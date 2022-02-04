@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://vue-appointment.vercel.app', 'https://upbeat-hawking-cf5580.netlify.app', 'http://localhost:3006', 'http://192.168.1.101:3006', 'http://localhost:8080', 'http://192.168.1.116:8080'
+    origins 'https://upbeat-hawking-cf5580.netlify.app', 'https://vue-appointment.vercel.app', 'http://localhost:3006', 'http://192.168.1.101:3006', 'http://localhost:8080', 'http://192.168.1.116:8080'
 
     resource '*',
       headers: :any,
