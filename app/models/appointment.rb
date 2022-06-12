@@ -5,4 +5,6 @@ class Appointment < ApplicationRecord
 
   belongs_to :user
   belongs_to :doctor
+
+  delegate :picture, to: :doctor, prefix: true
 end
