@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :doctors, dependent: :destroy
   has_many :appointments, dependent: :destroy
+
+  def find_recent_appointments(col = :created_at)
+    appointments.order_by(col)
+  end
 end

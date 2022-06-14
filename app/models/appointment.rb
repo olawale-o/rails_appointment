@@ -7,4 +7,6 @@ class Appointment < ApplicationRecord
   belongs_to :doctor
 
   delegate :picture, to: :doctor, prefix: true
+
+  scope :order_by, ->(col) { order(col) }
 end

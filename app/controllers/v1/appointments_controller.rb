@@ -3,7 +3,7 @@ class V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show destroy]
 
   def index
-    @appointments = current_user.appointments.order(created_at: :desc)
+    @appointments = current_user.find_recent_appointments
   end
 
   def show; end
