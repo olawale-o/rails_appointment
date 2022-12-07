@@ -3,7 +3,7 @@ class V1::DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[show destroy]
 
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.eager_load(:appointments)
   end
 
   def show; end
