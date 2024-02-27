@@ -35,6 +35,8 @@ gem 'rspec-rails', '~> 5.0.0'
 gem 'rswag'
 
 gem "aws-sdk-s3", require: false
+gem "capistrano-rvm"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +52,8 @@ group :development do
   gem 'spring'
   # Use to detect n+1 problems
   gem 'bullet'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
 end
 
 group :test do
